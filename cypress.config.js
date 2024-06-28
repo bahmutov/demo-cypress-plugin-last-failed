@@ -1,12 +1,15 @@
 const { defineConfig } = require('cypress')
+const { collectFailingTests } = require('cypress-plugin-last-failed')
 
 module.exports = defineConfig({
   e2e: {
     // baseUrl, etc
     fixturesFolder: false,
     setupNodeEvents(on, config) {
-      // implement node event listeners here
-      // and load any plugins that require the Node environment
+      collectFailingTests(on, config)
+
+      require('@bahmutov/cy-grep/src/plugin')(config)
+      return config
     },
   },
 })

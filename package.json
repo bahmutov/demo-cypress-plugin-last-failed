@@ -10,7 +10,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@bahmutov/cy-grep": "^1.10.0",
     "cypress": "^13.12.0",
+    "cypress-plugin-last-failed": "^1.1.0",
     "prettier": "^3.3.2"
   }
 }
